@@ -20,7 +20,7 @@ Interested in building your own robotic arm or have questions? Reach out to me a
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/SushanThakur/armikochan.git
+   git clone https://github.com/kairobyte/armikochan.git
 2. Explore the code, 3D models, and documentation.
 3. Share your ideas or feedback by opening an issue or contacting me directly.
 
