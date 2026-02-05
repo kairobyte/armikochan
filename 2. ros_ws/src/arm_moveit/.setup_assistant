@@ -1,0 +1,27 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: arm_description
+    relative_path: urdf/arm_description.urdf
+  srdf:
+    relative_path: config/arm_description.srdf
+  package_settings:
+    author_name: Sushant Thakur
+    author_email: 081bel092.sushant@pcampus.edu.np
+    generated_timestamp: 1769347990
+  control_xacro:
+    command:
+      - position
+      - velocity
+    state:
+      - position
+      - velocity
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - position
+      - velocity
+    state:
+      - position
+      - velocity
