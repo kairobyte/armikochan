@@ -3,6 +3,7 @@
 .tmp.driveupload/
 ignore/
 3. arm_model_test/
+test/
 
 # --- ROS 2 Jazzy Specific ---
 build/
