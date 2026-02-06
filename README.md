@@ -33,7 +33,7 @@ I am a solo student developer balancing college, coding, and hardware. If you fi
 ## 📥 Getting Started
 ```bash
 # Clone the repository
-git clone [https://github.com/kairobyte/armikochan.git](https://github.com/kairobyte/armikochan.git)
+git clone https://github.com/kairobyte/armikochan.git
 
 # Navigate to the workspace
 cd armikochan/2.\ ros_ws/
