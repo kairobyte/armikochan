@@ -9,6 +9,8 @@ This project is my 200+ day journey of building a high-precision, 8-degree-of-fr
 
 Most robotic arms out there are 6DOF at best, and they easily cost upwards of $5000. For a student or a smaller college, that's just not realistic. The ones that do offer more capability are either proprietary, locked behind expensive licenses, or simply too complex to learn from. There's a huge gap between what's available and what's actually accessible, and that gap is what this project is trying to fill.
 
+<img src="5. readme_assets/3d-model.png" alt="3d-model" height="300"> <img src="5. readme_assets/robot-pic-2.jpg" alt="robot image" height="300">
+
 ## Repository Contents
 
 - **`/1. firmware`**: ESP32 code for low-latency motor driving and FSR sensor processing.
