@@ -1,7 +1,7 @@
 # Armikochan V2 8-DOF Robotic Arm 🦾🐈‍⬛
 
 ![ROS2](https://img.shields.io/badge/ROS2-Jazzy-blue)
-![License](https://img.shields.io/badge/License-Open%20Source%20(Coming%20Soon)-green)
+![License](https://img.shields.io/badge/License-Open%20Source%20-green)
 
 This project is my 200+ day journey of building a high-precision, 8-degree-of-freedom robotic arm from scratch while surviving Electrical Engineering.
 
