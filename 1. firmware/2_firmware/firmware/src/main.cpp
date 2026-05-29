@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * FILENAME:    main.cpp
+ * DESCRIPTION: The actual code running on esp32 in the final project
+ * AUTHOR:      Sushant Thakur
+ * DATE:        202-05-29
+ * VERSION:     1.0.0
+ * 
+ * COPYRIGHT:   Copyright (c) 2026 Sushant Thakur. All rights reserved.
+ ******************************************************************************/
+
 #include <Arduino.h>
 #include <AccelStepper.h>
 

@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * FILENAME:    main.cpp
+ * DESCRIPTION: Use this code to run your stepper in closed loop mode
+ * AUTHOR:      Sushant Thakur
+ * DATE:        202-05-29
+ * VERSION:     1.0.0
+ * 
+ * COPYRIGHT:   Copyright (c) 2026 Sushant Thakur. All rights reserved.
+ ******************************************************************************/
+
 #include <AS5600.h>
 #include <AccelStepper.h>
 #include <Wire.h>

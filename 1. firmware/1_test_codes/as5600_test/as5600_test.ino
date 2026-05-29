@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * FILENAME:    as5600_test.ino
+ * DESCRIPTION: Use this to test AS5600 encoder individually
+ * AUTHOR:      Sushant Thakur
+ * DATE:        202-05-29
+ * VERSION:     1.0.0
+ * 
+ * COPYRIGHT:   Copyright (c) 2026 Sushant Thakur. All rights reserved.
+ ******************************************************************************/
+
 #include <AS5600.h>
 #include "freertos/semphr.h"
 

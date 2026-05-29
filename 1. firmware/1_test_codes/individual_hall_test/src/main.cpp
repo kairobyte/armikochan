@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * FILENAME:    main.cpp
+ * DESCRIPTION: Use this to test the hall sensors individually
+ * AUTHOR:      Sushant Thakur
+ * DATE:        202-05-29
+ * VERSION:     1.0.0
+ * 
+ * COPYRIGHT:   Copyright (c) 2026 Sushant Thakur. All rights reserved.
+ ******************************************************************************/
+
 #include <Arduino.h>
 
 #define HALL_PIN 1

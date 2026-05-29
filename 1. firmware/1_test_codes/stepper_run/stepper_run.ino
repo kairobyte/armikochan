@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * FILENAME:    stepper_run.ino
+ * DESCRIPTION: Use this to run the stepper motors at different speeds
+ * AUTHOR:      Sushant Thakur
+ * DATE:        202-05-29
+ * VERSION:     1.0.0
+ * 
+ * COPYRIGHT:   Copyright (c) 2026 Sushant Thakur. All rights reserved.
+ ******************************************************************************/
+
 #include <AccelStepper.h>
 
 #define dir_pin 4

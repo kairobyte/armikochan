@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * FILENAME:    fsr_test.ino
+ * DESCRIPTION: Use this to test FSR
+ * AUTHOR:      Sushant Thakur
+ * DATE:        202-05-29
+ * VERSION:     1.0.0
+ * 
+ * COPYRIGHT:   Copyright (c) 2026 Sushant Thakur. All rights reserved.
+ ******************************************************************************/
+
 #define FSR_PIN 18
 
 int last_value = 0;
