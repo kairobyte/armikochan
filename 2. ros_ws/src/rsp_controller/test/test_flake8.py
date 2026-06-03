@@ -1,3 +1,8 @@
+# ============================================================================
+# File: test_flake8.py
+# Auto-added section markers and high-level comments
+# ============================================================================
+
 # Copyright 2017 Open Source Robotics Foundation, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,12 +17,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# ====== Imports ======
 from ament_flake8.main import main_with_errors
 import pytest
 
 
 @pytest.mark.flake8
 @pytest.mark.linter
+# Function: test_flake8
+# ====== Functions ======
 def test_flake8():
     rc, errors = main_with_errors(argv=[])
     assert rc == 0, \

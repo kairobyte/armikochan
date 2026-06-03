@@ -1,3 +1,9 @@
+# ============================================================================
+# File: serial_controller.py
+# Auto-added section markers and high-level comments
+# ============================================================================
+
+# ====== Imports ======
 import math
 import rclpy
 from rclpy.node import Node
@@ -7,11 +13,14 @@ import serial
 
 
 # Hardware / motor parameters
+# ====== Constants / Config ======
 REDUCTION_RATIO = 4.1538
 STEPS_PER_REV = 400
 STAGES = [2, 3, 2, 2, 2, 2, 1, 1]
 
 
+# Class: SerialController
+# ====== Classes ======
 class SerialController(Node):
     def __init__(self):
         super().__init__('serial_controller')
@@ -143,6 +152,8 @@ class SerialController(Node):
         super().destroy_node()
 
 
+# Function: main
+# ====== Functions ======
 def main(args=None):
     rclpy.init(args=args)
     node = None
@@ -161,5 +172,6 @@ def main(args=None):
             rclpy.shutdown()
 
 
+# ====== Main ======
 if __name__ == '__main__':
     main()

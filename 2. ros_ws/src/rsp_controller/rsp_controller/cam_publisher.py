@@ -1,3 +1,9 @@
+# ============================================================================
+# File: cam_publisher.py
+# Auto-added section markers and high-level comments
+# ============================================================================
+
+# ====== Imports ======
 import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import Image
@@ -5,6 +11,8 @@ import cv2 as cv
 from cv_bridge import CvBridge
 
 
+# Class: CamPub
+# ====== Classes ======
 class CamPub(Node):
 	def __init__(self):
 		super().__init__('cam_publisher')
@@ -23,6 +31,8 @@ class CamPub(Node):
 			self.cam_pub.publish(ros_image)
 			self.get_logger().debug("Published Image")
 
+# Function: main
+# ====== Functions ======
 def main():
 	try:
 		rclpy.init()
@@ -36,5 +46,6 @@ def main():
 			cam_publisher.destroy_node()
 			rclpy.shutdown()
 
+# ====== Main ======
 if __name__ == '__main__':
 	main()

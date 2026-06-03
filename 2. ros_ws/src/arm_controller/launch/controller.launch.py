@@ -1,8 +1,17 @@
+# ============================================================================
+# File: controller.launch.py
+# Auto-added section markers and high-level comments
+# ============================================================================
+
+# ====== Imports ======
 from launch_ros.actions import Node
 from launch import LaunchDescription
 
+# ====== Constants / Config ======
 package_name = 'arm_controller'
 
+# Function: generate_launch_description
+# ====== Functions ======
 def generate_launch_description():
 	
 	cmd_type_switcher_node = Node(

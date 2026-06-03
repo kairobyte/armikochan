@@ -8,21 +8,34 @@
  * COPYRIGHT:   Copyright (c) 2026 Sushant Thakur. All rights reserved.
  ******************************************************************************/
 
+// ============================================================================
+// File: stepper_run.ino
+// Auto-added section markers and high-level comments
+// ============================================================================
+
+// ====== Includes ======
 #include <AccelStepper.h>
 
+// ====== Configuration ======
 #define dir_pin 4
 #define step_pin 9
 
 AccelStepper stepper(AccelStepper::DRIVER, step_pin, dir_pin);
 
+// ====== Globals ======
 int speed = -100;
 
+// Function: setup
+
+// ====== Functions ======
 void setup(){
   Serial.begin(115200);
   stepper.setMaxSpeed(2000);
   stepper.setSpeed(speed);
   Serial.println("Setup Done.");
 }
+
+// Function: loop
 
 void loop(){
   if(Serial.available()>0){

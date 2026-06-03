@@ -1,3 +1,9 @@
+# ============================================================================
+# File: display.launch.py
+# Auto-added section markers and high-level comments
+# ============================================================================
+
+# ====== Imports ======
 from launch import LaunchDescription
 from launch_ros.actions import Node
 from launch_ros.parameter_descriptions import ParameterValue
@@ -7,6 +13,8 @@ import os
 from ament_index_python.packages import get_package_share_directory
 
 
+# Function: generate_launch_description
+# ====== Functions ======
 def generate_launch_description():
     model_arg = DeclareLaunchArgument(
         name="model",

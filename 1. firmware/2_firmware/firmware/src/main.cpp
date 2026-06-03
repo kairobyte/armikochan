@@ -8,6 +8,12 @@
  * COPYRIGHT:   Copyright (c) 2026 Sushant Thakur. All rights reserved.
  ******************************************************************************/
 
+// ============================================================================
+// File: main.cpp
+// Auto-added section markers and high-level comments
+// ============================================================================
+
+// ====== Includes ======
 #include <Arduino.h>
 #include <AccelStepper.h>
 
@@ -15,11 +21,13 @@
 // Configuration
 // ────────────────────────────────────────────────
 
+// ====== Configuration ======
 #define STEPPER_COUNT       9
 #define SERIAL_BAUD        115200
 #define SERIAL_TIMEOUT_MS   50   // how long to wait for full command
 
 // Pin arrays (make sure these match your wiring!)
+// ====== Globals ======
 const uint8_t DIR_PINS[STEPPER_COUNT]  = {4, 5, 6, 7, 17, 18, 8, 3, 38};
 const uint8_t STEP_PINS[STEPPER_COUNT] = {9,10,11,12,13,14,21,47,37};
 
@@ -57,6 +65,8 @@ long target_positions[STEPPER_COUNT] = {0};
 // ────────────────────────────────────────────────
 // Compute the expected move time (in seconds) for a given acceleration, max speed, and distance
 // ────────────────────────────────────────────────
+// Function: compute_move_time
+// ====== Functions ======
 double compute_move_time(float accel, float max_speed, long distance) {
     distance = abs(distance);
     if (distance == 0) return 0.0;
@@ -78,6 +88,7 @@ double compute_move_time(float accel, float max_speed, long distance) {
 // ────────────────────────────────────────────────
 // Fast atoi that handles negative numbers
 // ────────────────────────────────────────────────
+// Function: fast_atoi
 inline long fast_atoi(const char *str) {
     long value = 0;
     bool negative = false;
@@ -98,6 +109,7 @@ inline long fast_atoi(const char *str) {
 // ────────────────────────────────────────────────
 // Serial command parser
 // ────────────────────────────────────────────────
+// Function: read_serial_command
 void read_serial_command() {
     if (Serial.available() == 0) return;
 
@@ -215,6 +227,8 @@ void read_serial_command() {
 // ────────────────────────────────────────────────
 // SETUP
 // ────────────────────────────────────────────────
+// Function: setup
+
 void setup() {
     Serial.begin(SERIAL_BAUD);
     delay(200);  // give serial time to settle
@@ -241,6 +255,8 @@ void setup() {
 // ────────────────────────────────────────────────
 // MAIN LOOP
 // ────────────────────────────────────────────────
+// Function: loop
+
 void loop() {
     read_serial_command();
 

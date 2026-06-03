@@ -1,3 +1,9 @@
+# ============================================================================
+# File: joy_joint_publisher.py
+# Auto-added section markers and high-level comments
+# ============================================================================
+
+# ====== Imports ======
 import rclpy
 from rclpy.node import Node
 from rcl_interfaces.srv import GetParameters
@@ -5,6 +11,7 @@ from sensor_msgs.msg import Joy
 from geometry_msgs.msg import TwistStamped
 from control_msgs.msg import JointJog
 
+# ====== Constants / Config ======
 FRAME_ID = "base_link"
 
 JOINT_JOG = 0
@@ -12,6 +19,8 @@ TWIST = 1
 
 joints = ['joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5', 'joint_6', 'joint_7', 'tool_joint']
 
+# Class: JointPublisher
+# ====== Classes ======
 class JointPublisher(Node):
     def __init__(self):
         super().__init__('servo_joint_publisher')
@@ -72,6 +81,8 @@ class JointPublisher(Node):
             self.joint_pub.publish(req_joint)
             self.get_logger().debug("JointJog command published")
 
+# Function: main
+# ====== Functions ======
 def main():
     try:
         rclpy.init()
@@ -84,5 +95,6 @@ def main():
             servo_joint_publisher.destroy_node()
             rclpy.shutdown()
 
+# ====== Main ======
 if __name__ == "__main__":
     main()

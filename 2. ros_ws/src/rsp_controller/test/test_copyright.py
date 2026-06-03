@@ -1,3 +1,8 @@
+# ============================================================================
+# File: test_copyright.py
+# Auto-added section markers and high-level comments
+# ============================================================================
+
 # Copyright 2015 Open Source Robotics Foundation, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,6 +17,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# ====== Imports ======
 from ament_copyright.main import main
 import pytest
 
@@ -20,6 +26,8 @@ import pytest
 @pytest.mark.skip(reason='No copyright header has been placed in the generated source file.')
 @pytest.mark.copyright
 @pytest.mark.linter
+# Function: test_copyright
+# ====== Functions ======
 def test_copyright():
     rc = main(argv=['.', 'test'])
     assert rc == 0, 'Found errors'

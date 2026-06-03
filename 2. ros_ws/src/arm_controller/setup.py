@@ -1,7 +1,14 @@
+# ============================================================================
+# File: setup.py
+# Auto-added section markers and high-level comments
+# ============================================================================
+
+# ====== Imports ======
 import os
 from glob import glob
 from setuptools import find_packages, setup
 
+# ====== Constants / Config ======
 package_name = 'arm_controller'
 
 setup(

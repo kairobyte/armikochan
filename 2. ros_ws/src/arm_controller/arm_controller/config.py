@@ -1,3 +1,9 @@
+# ============================================================================
+# File: config.py
+# Auto-added section markers and high-level comments
+# ============================================================================
+
+# ====== Constants / Config ======
 FRAME_ID = "base_link"
 ROBOT_JOINTS = ['joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5', 'joint_6', 'joint_7', 'tool_joint']
 GRIPPER_JOINTS = ['grip_left_joint', 'grip_right_joint']

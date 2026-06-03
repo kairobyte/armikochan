@@ -1,3 +1,9 @@
+# ============================================================================
+# File: gripper_trajectory_controller.py
+# Auto-added section markers and high-level comments
+# ============================================================================
+
+# ====== Imports ======
 import rclpy
 from rclpy.node import Node
 from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
@@ -6,12 +12,15 @@ from sensor_msgs.msg import Joy
 from rcl_interfaces.msg import SetParametersResult
 from rclpy.parameter import Parameter
 
+# ====== Constants / Config ======
 FRAME_ID = "tool_link"
 JOINTS = ['grip_left_joint', 'grip_right_joint']
 
 OPEN_POS = [0.0, 0.0]
 CLOSE_POS = [-0.04, 0.04]
 
+# Class: GripperTrajectoryController
+# ====== Classes ======
 class GripperTrajectoryController(Node):
     def __init__(self):
         super().__init__('gripper_trajectory_controller')
@@ -53,6 +62,8 @@ class GripperTrajectoryController(Node):
         self.joint_traj_pub.publish(joint_traj)
         self.get_logger().info(f"Gripper {new_state.lower()}")
 
+# Function: main
+# ====== Functions ======
 def main():
     try:
         rclpy.init()
@@ -65,5 +76,6 @@ def main():
             gripper_trajectory_controller.destroy_node()
             rclpy.shutdown()
 
+# ====== Main ======
 if __name__ == '__main__':
     main()

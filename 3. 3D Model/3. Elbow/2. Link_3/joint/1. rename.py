@@ -1,5 +1,12 @@
+# ============================================================================
+# File: 1. rename.py
+# Auto-added section markers and high-level comments
+# ============================================================================
+
+# ====== Imports ======
 import os
 
+# ====== Constants / Config ======
 header = input("Enter file header: ")
 
 file_name = __file__

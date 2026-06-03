@@ -1,3 +1,9 @@
+# ============================================================================
+# File: joint_state_recorder.py
+# Auto-added section markers and high-level comments
+# ============================================================================
+
+# ====== Imports ======
 import rclpy
 from rclpy.node import Node
 from rclpy.parameter import Parameter
@@ -7,11 +13,14 @@ from sensor_msgs.msg import Joy
 from rcl_interfaces.msg import SetParametersResult
 import time
 
+# ====== Constants / Config ======
 PARAM_NAME = 'current_recording_state'
 RECORDING = 0
 
 PATH = 'recording/pos.txt'
 
+# Class: JointStateRecorder
+# ====== Classes ======
 class JointStateRecorder(Node):
 	def __init__(self):
 		super().__init__('joint_state_recorder')
@@ -65,6 +74,8 @@ class JointStateRecorder(Node):
 				self.get_logger().info(f"{state}")
 		return SetParametersResult(successful=True)
 
+# Function: main
+# ====== Functions ======
 def main():
 	try:
 		rclpy.init()
@@ -77,5 +88,6 @@ def main():
 			joint_state_recorder.destroy_node()
 			rclpy.shutdown()
 
+# ====== Main ======
 if __name__=='__main__':
 	main()

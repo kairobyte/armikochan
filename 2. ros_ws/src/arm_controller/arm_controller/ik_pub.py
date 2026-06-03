@@ -1,3 +1,9 @@
+# ============================================================================
+# File: ik_pub.py
+# Auto-added section markers and high-level comments
+# ============================================================================
+
+# ====== Imports ======
 import time
 import sys
 import rclpy
@@ -12,6 +18,7 @@ import matplotlib.pyplot as plt
 # ===============================================================
 # Configuration Constants
 # ===============================================================
+# ====== Constants / Config ======
 AUTO_RUN = False
 SVG_FILE = "svg/workspace.svg"
 
@@ -34,6 +41,8 @@ default_orient = [
 # SVG Parsing Utilities
 # ===============================================================
 
+# Function: extract_coordinates_from_svg
+# ====== Functions ======
 def extract_coordinates_from_svg(svg_file):
     """
     Parse SVG and extract all drawing coordinates.
@@ -125,6 +134,8 @@ def extract_coordinates_from_svg(svg_file):
 # ROS 2 Node
 # ===============================================================
 
+# Class: IkPublisher
+# ====== Classes ======
 class IkPublisher(Node):
     def __init__(self):
         super().__init__(NODE_NAME)
@@ -228,6 +239,7 @@ class IkPublisher(Node):
 # ===============================================================
 # Entry Point
 # ===============================================================
+# Function: main
 def main():
     rclpy.init()
     node = IkPublisher()
@@ -241,5 +253,6 @@ def main():
         rclpy.shutdown()
 
 
+# ====== Main ======
 if __name__ == "__main__":
     main()

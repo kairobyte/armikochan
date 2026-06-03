@@ -1,3 +1,9 @@
+# ============================================================================
+# File: joint_state_player.py
+# Auto-added section markers and high-level comments
+# ============================================================================
+
+# ====== Imports ======
 import threading
 import time
 import re
@@ -9,6 +15,7 @@ from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 from rcl_interfaces.msg import SetParametersResult
 from builtin_interfaces.msg import Duration
 
+# ====== Constants / Config ======
 PARAM_NAME = 'current_playing_state'
 PLAYING = 0
 
@@ -20,6 +27,8 @@ GRIPPER_JOINTS = ['grip_left_joint', 'grip_right_joint']
 
 PATH = 'recording/pos.txt'
 
+# Class: JointStatePlayer
+# ====== Classes ======
 class JointStatePlayer(Node):
     def __init__(self):
         super().__init__('joint_state_player')
@@ -116,6 +125,8 @@ class JointStatePlayer(Node):
         return SetParametersResult(successful=True)
 
 
+# Function: main
+# ====== Functions ======
 def main():
     try:
         rclpy.init()
@@ -129,5 +140,6 @@ def main():
             rclpy.shutdown()
 
 
+# ====== Main ======
 if __name__ == '__main__':
     main()

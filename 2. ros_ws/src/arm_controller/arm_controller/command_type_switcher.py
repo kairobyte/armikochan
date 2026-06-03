@@ -1,3 +1,9 @@
+# ============================================================================
+# File: command_type_switcher.py
+# Auto-added section markers and high-level comments
+# ============================================================================
+
+# ====== Imports ======
 import rclpy
 from rclpy.executors import ExternalShutdownException
 from rclpy.node import Node
@@ -9,12 +15,15 @@ from rcl_interfaces.msg import SetParametersResult
 # =========================================================================
 # Config Const
 # =========================================================================
+# ====== Constants / Config ======
 JOINT_JOG = 0
 TWIST = 1
 
 # =========================================================================
 # ROS 2 Node
 # =========================================================================
+# Class: CmdTypeSwitcher
+# ====== Classes ======
 class CmdTypeSwitcher(Node):
 	
 	def __init__(self):
@@ -60,6 +69,8 @@ class CmdTypeSwitcher(Node):
 # Entry POint
 # =========================================================================
 
+# Function: main
+# ====== Functions ======
 def main():
 	try:
 		rclpy.init()
@@ -75,5 +86,6 @@ def main():
 			cmd_type_switcher.destroy_node()
 			rclpy.shutdown()
 
+# ====== Main ======
 if __name__ == '__main__':
 	main()

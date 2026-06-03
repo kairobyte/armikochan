@@ -1,5 +1,12 @@
+# ============================================================================
+# File: setup.py
+# Auto-added section markers and high-level comments
+# ============================================================================
+
+# ====== Imports ======
 from setuptools import find_packages, setup
 
+# ====== Constants / Config ======
 package_name = 'rsp_controller'
 
 setup(

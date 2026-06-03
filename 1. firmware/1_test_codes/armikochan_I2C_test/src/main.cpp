@@ -8,10 +8,17 @@
  * COPYRIGHT:   Copyright (c) 2026 Sushant Thakur. All rights reserved.
  ******************************************************************************/
 
+// ============================================================================
+// File: main.cpp
+// Auto-added section markers and high-level comments
+// ============================================================================
+
+// ====== Includes ======
 #include <Arduino.h>
 #include <Wire.h>
 #include <AS5600.h>   // Rob Tillaart's library
 
+// ====== Configuration ======
 #define SDA_PIN         15
 #define SCL_PIN         16
 #define MUX_ADDRESS     0x70
@@ -20,6 +27,8 @@
 // Create one AS5600 instance per encoder
 AS5600 encoders[ENCODER_COUNT];
 
+// Function: selectMultiplexerChannel
+// ====== Functions ======
 void selectMultiplexerChannel(uint8_t channel) {
   if (channel >= ENCODER_COUNT) return;
 
@@ -28,6 +37,8 @@ void selectMultiplexerChannel(uint8_t channel) {
   Wire.endTransmission();
   delay(1);                   // small delay for reliability (optional but helps)
 }
+
+// Function: setup
 
 void setup() {
   Serial.begin(115200);
@@ -39,6 +50,7 @@ void setup() {
   Wire.begin(SDA_PIN, SCL_PIN);
   Wire.setClock(400000);      // 400 kHz is usually fine and faster
 
+// ====== Globals ======
   bool allGood = true;
 
   for (int i = 0; i < ENCODER_COUNT; i++) {
@@ -69,6 +81,8 @@ void setup() {
     Serial.println("\nOne or more encoders failed. Check connections.\n");
   }
 }
+
+// Function: loop
 
 void loop() {
   // Example: read and print raw angles from all encoders every 500 ms

@@ -8,9 +8,16 @@
  * COPYRIGHT:   Copyright (c) 2026 Sushant Thakur. All rights reserved.
  ******************************************************************************/
 
+// ============================================================================
+// File: stepper_home.ino
+// Auto-added section markers and high-level comments
+// ============================================================================
+
+// ====== Includes ======
 #include <AS5600.h>
 #include <AccelStepper.h>
 
+// ====== Configuration ======
 #define HALL_PIN 40
 #define DIR_PIN    18
 #define STEP_PIN   14
@@ -19,6 +26,7 @@
 #define HALL_NORMALLY_OPEN true
 
 // Homing direction: negative = towards home hall
+// ====== Globals ======
 const float HOMING_SPEED = -200.0;        // steps per second (negative = towards home)
 const float BACKOFF_SPEED = 500.0;        // positive speed to move away from hall
 const float APPROACH_SPEED = -200.0;       // slow speed for final approach
@@ -29,6 +37,9 @@ AccelStepper stepper(AccelStepper::DRIVER, STEP_PIN, DIR_PIN);
 
 byte hallActiveState;
 
+// Function: setup
+
+// ====== Functions ======
 void setup() {
   Serial.begin(115200);
 
@@ -56,6 +67,8 @@ void setup() {
   stepper.setCurrentPosition(0);
 }
 
+// Function: loop
+
 void loop() {
   // Handle serial commands (optional)
   if (Serial.available()) {
@@ -73,10 +86,12 @@ void loop() {
   stepper.run();
 }
 
+// Function: isHallTriggered
 bool isHallTriggered() {
   return digitalRead(HALL_PIN) == hallActiveState;
 }
 
+// Function: debounceHall
 bool debounceHall() {
   if (!isHallTriggered()) return false;
   
@@ -87,6 +102,7 @@ bool debounceHall() {
   return isHallTriggered();
 }
 
+// Function: homeStepper
 void homeStepper() {
   Serial.println("Starting homing sequence...");
 

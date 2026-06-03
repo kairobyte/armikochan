@@ -1,3 +1,8 @@
+# ============================================================================
+# File: test_pep257.py
+# Auto-added section markers and high-level comments
+# ============================================================================
+
 # Copyright 2015 Open Source Robotics Foundation, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,12 +17,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# ====== Imports ======
 from ament_pep257.main import main
 import pytest
 
 
 @pytest.mark.linter
 @pytest.mark.pep257
+# Function: test_pep257
+# ====== Functions ======
 def test_pep257():
     rc = main(argv=['.', 'test'])
     assert rc == 0, 'Found code style errors / warnings'

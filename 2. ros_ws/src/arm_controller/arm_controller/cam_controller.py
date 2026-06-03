@@ -1,5 +1,11 @@
+# ============================================================================
+# File: cam_controller.py
+# Auto-added section markers and high-level comments
+# ============================================================================
+
 #!/home/sushant/ros_ws/ignore/test_env/bin/python3
 
+# ====== Imports ======
 import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import Image, Joy
@@ -16,6 +22,7 @@ from rclpy.parameter import Parameter
 # =========================================================================
 # Config Const
 # =========================================================================
+# ====== Constants / Config ======
 AUTO_RUN = False  # Set True if you want to run this program directly without using PS4 controller
 
 frame_id = "base_link"
@@ -25,6 +32,8 @@ gripper_joints = ['grip_left_joint', 'grip_right_joint']
 open_pos = [0.0, 0.0]
 close_pos = [-0.04, 0.04]
 
+# Class: Position
+# ====== Classes ======
 class Position:
     def __init__(self, lx=0.0, ly=0.0):
         self.lx = lx
@@ -34,6 +43,7 @@ class Position:
 # =========================================================================
 # ROS 2 Node
 # =========================================================================
+# Class: CamController
 class CamController(Node):
 
     def __init__(self):
@@ -195,6 +205,8 @@ class CamController(Node):
             self.twist_pub.publish(joint_twist)
             self.get_logger().debug(f'x={type(joint_twist.twist.linear.x)} y={joint_twist.twist.linear.x:.2f}')
             
+# Function: main
+# ====== Functions ======
 def main():
     
     try:
@@ -210,5 +222,6 @@ def main():
             cam_controller.destroy_node()
             rclpy.shutdown()
 
+# ====== Main ======
 if __name__ == '__main__':
     main()

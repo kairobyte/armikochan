@@ -8,6 +8,12 @@
  * COPYRIGHT:   Copyright (c) 2026 Sushant Thakur. All rights reserved.
  ******************************************************************************/
 
+// ============================================================================
+// File: as5600_test.ino
+// Auto-added section markers and high-level comments
+// ============================================================================
+
+// ====== Includes ======
 #include <AS5600.h>
 #include "freertos/semphr.h"
 
@@ -15,6 +21,9 @@
 AS5600 as5600;   //  use default Wire
 
 
+// Function: setup
+
+// ====== Functions ======
 void setup()
 {
   // while(!Serial);
@@ -35,6 +44,7 @@ void setup()
 
   //  as5600.setAddress(0x40);  //  AS5600L only
 
+// ====== Globals ======
   int b = as5600.isConnected();
   Serial.print("Connect: ");
   Serial.println(b);
@@ -42,6 +52,8 @@ void setup()
   delay(1000);
 }
 
+
+// Function: loop
 
 void loop()
 {

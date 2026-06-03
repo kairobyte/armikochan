@@ -8,11 +8,18 @@
  * COPYRIGHT:   Copyright (c) 2026 Sushant Thakur. All rights reserved.
  ******************************************************************************/
 
+// ============================================================================
+// File: main.cpp
+// Auto-added section markers and high-level comments
+// ============================================================================
+
+// ====== Includes ======
 #include <AS5600.h>
 #include <AccelStepper.h>
 #include <Wire.h>
 
 // ── PINS ───────────────────────────────────────────────────────────────
+// ====== Configuration ======
 #define I2C_SDA         15
 #define I2C_SCL         16
 #define HALL_PIN        12
@@ -40,6 +47,7 @@
 // ── GLOBALS ────────────────────────────────────────────────────────────
 AS5600 as5600;
 AccelStepper stepper(AccelStepper::DRIVER, STEP_PIN, DIR_PIN);
+// ====== Globals ======
 byte hallActiveState;
 
 TaskHandle_t angle_h;
@@ -51,10 +59,13 @@ int current_pos = 0;
 
 bool angleTaskStart = false;
 
+// Function: isHallTriggered
+// ====== Functions ======
 bool isHallTriggered(){
 	return digitalRead(HALL_PIN) == hallActiveState;
 }
 
+// Function: debounceHall
 bool debounceHall() {
 	if (!isHallTriggered()) return false;
 	delayMicroseconds(50);
@@ -63,6 +74,7 @@ bool debounceHall() {
 	return isHallTriggered();
 }
 
+// Function: homeStepper
 void homeStepper(){
 	Serial.println("Started Homing");
 
@@ -93,6 +105,7 @@ void homeStepper(){
 	Serial.println("Stepper homing complete. ");
 }
 
+// Function: encoderSetup
 void encoderSetup(){
 	// AS5600 Setup
 	Wire.begin(I2C_SDA, I2C_SCL);
@@ -113,6 +126,7 @@ void encoderSetup(){
 	angleTaskStart = true;
 }
 
+// Function: angle_t
 void angle_t(void *pvParameters){
 	static uint32_t last_read = 0;
 	static int last_angle = 0;
@@ -146,6 +160,7 @@ void angle_t(void *pvParameters){
 	}
 }
 
+// Function: step_t
 void step_t(void *pvParameters) 
 {
   vTaskDelay(1000 / portTICK_PERIOD_MS);
@@ -155,6 +170,8 @@ void step_t(void *pvParameters)
     // vTaskDelay(1 / portTICK_PERIOD_MS);
   }
 }
+
+// Function: setup
 
 void setup(){
 	esp_log_level_set("*", ESP_LOG_ERROR);
@@ -201,6 +218,8 @@ void setup(){
 	);
 
 }
+
+// Function: loop
 
 void loop(){
 	stepper.run();
