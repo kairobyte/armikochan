@@ -26,6 +26,9 @@ Most robotic arms out there are 6DOF at best, and they easily cost upwards of $5
 - **Actuators:** Nema 17 Stepper Motor, with custom designed planetary gear set.
 - **Feedback:** Force-Sensitive Resistors (FSR) with silicone layer for gripper feedback and AS5600 magnetic encoder for joint angle feedback.
 
+## Block Diagram
+<img src="5. readme_assets/block-diagram.png" alt="block diagram">
+
 ## Community & Support
 
 I am a solo student developer balancing college, coding, and hardware. If you find this project helpful:
