@@ -27,7 +27,7 @@ Most robotic arms out there are 6DOF at best, and they easily cost upwards of $5
 - **Feedback:** Force-Sensitive Resistors (FSR) with silicone layer for gripper feedback and AS5600 magnetic encoder for joint angle feedback.
 
 ## Block Diagram
-<img src="5. readme_assets/block-diagram.png" alt="block diagram" width="100%">
+<img src="5. readme_assets/block-diagram.png" alt="block diagram">
 
 ## Community & Support
 
